@@ -6,34 +6,34 @@
 </script>
 
 <nav class="flex flex-col h-full items-center w-12 gap-2">
-	<NavLink href="/">
+	<NavLink href="/" padding="p-[0.6rem]">
 		<Icon name="dashboard" />
-		<NavTooltip bg="yellow">
+		<NavTooltip color="bg-yellow">
 			<p class="text-bg">Dashboard</p>
 		</NavTooltip>
 	</NavLink>
 
 	<HLine />
 
-	<NavLink href="/board">
+	<NavLink href="/board" padding="p-[0.4rem]">
 		<Icon name="board" />
-		<NavTooltip bg="green2">
+		<NavTooltip color="bg-green2">
 			<p class="text-bg">Project</p>
 		</NavTooltip>
 	</NavLink>
 
-	<NavLink href="/stats">
+	<NavLink href="/stats" padding="p-[0.7rem]">
 		<Icon name="stats" />
-		<NavTooltip bg="red1">
+		<NavTooltip color="bg-red1">
 			<p class="text-bg">Stats</p>
 		</NavTooltip>
 	</NavLink>
 
 	<HLine />
 
-	<NavLink href="/user">
+	<NavLink href="/user" padding="p-[0.6rem]">
 		<Icon name="user" />
-		<NavTooltip bg="blue3">
+		<NavTooltip color="bg-blue3">
 			<p class="text-bg">Profile</p>
 		</NavTooltip>
 	</NavLink>
