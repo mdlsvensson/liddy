@@ -14,7 +14,7 @@
 		<Nav />
 	</header>
 
-	<main class="bg-bg w-full">
+	<main class="bg-bg w-full p-6">
 		<slot />
 	</main>
 </div>
