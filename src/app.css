@@ -7,5 +7,5 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 .dim {
-  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .3);
+  outline: 100vmax solid rgba(0, 0, 0, .3);
 }
