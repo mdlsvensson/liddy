@@ -1,12 +1,12 @@
 <script lang="ts">
+	import { modal } from '$lib/store';
 	import ColTitleBar from './ColTitleBar.svelte';
 
 	export let title: string;
 
-	let inputToggled = false;
-
 	const handleClick = () => {
-		inputToggled = !inputToggled;
+		$modal.isVisible = true;
+		$modal.type = 'NewCard';
 	};
 </script>
 
