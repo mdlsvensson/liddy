@@ -31,7 +31,12 @@ export const projects: Writable<Array<Object>> = writable([
   }
 ]);
 
-export const modal: Writable<Object> = writable({
-  isToggled: false,
+interface Modal {
+  isVisible: boolean;
+  type: string;
+}
+
+export const modal: Writable<Modal> = writable({
+  isVisible: false,
   type: "",
 });
