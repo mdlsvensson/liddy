@@ -9,7 +9,7 @@
 </script>
 
 <div
-	class="opacity-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black p-6 dim"
+	class="opacity-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-fg p-4 dim rounded-lg"
 	class:opacity-100={$modal.isVisible}
 	use:clickOutside
 	on:click_outside={handleClickOutside}
