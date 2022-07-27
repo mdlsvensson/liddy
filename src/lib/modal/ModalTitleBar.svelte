@@ -9,8 +9,8 @@
 	};
 </script>
 
-<div class="w-full flex place-content-between">
-	<h1 class="pl-2">{title}</h1>
+<div class="w-full flex place-content-between bg-fg-shade p-2">
+	<h1 class="pl-[0.4rem] pt-[0.2rem]">{title}</h1>
 	<button
 		class="w-7 fill-text-fg hover:bg-fg-shade rounded-md p-[2px] transition duration-100"
 		on:click={handleClick}
