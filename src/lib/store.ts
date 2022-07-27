@@ -1,4 +1,5 @@
 import { writable, type Writable } from "svelte/store";
+import type { Modal } from "./interfaces";
 
 export const state: Writable<Object> = writable({
   isLoading: false,
@@ -30,11 +31,6 @@ export const projects: Writable<Array<Object>> = writable([
     isLocked: false,
   }
 ]);
-
-interface Modal {
-  isVisible: boolean;
-  type: string;
-}
 
 export const modal: Writable<Modal> = writable({
   isVisible: false,
