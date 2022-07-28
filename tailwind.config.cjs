@@ -21,7 +21,7 @@ module.exports = {
         'bg': '#1F2430',
         'fg': '#242936',
         'fg-shade': '#2F3440',
-        'fg-light': '#444853',
+        'fg-light': '#393E4A',
         'text-fg': '#E9EAEB',
         'text-bg': '#E9E9EA',
         'gray': '#CCCAC2',
