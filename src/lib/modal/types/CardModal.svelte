@@ -10,7 +10,7 @@
 	<div class="flex gap-2">
 		<label for="card-projects" class="sr-only">Select a project for this task</label>
 		<button
-			class="py-2 px-4 transition bg-fg-shade rounded-md flex-shrink-0"
+			class="py-2 px-4 transition bg-fg-shade rounded-md flex-shrink-0 hover:bg-fg-light"
 			name="card-tags"
 			id="card-tags"
 			on:click|preventDefault>No Project</button
@@ -31,7 +31,7 @@
 	<div class="flex gap-2">
 		<label for="card-tags" class="sr-only">Add tags to this task</label>
 		<button
-			class="p-2 transition bg-fg-shade rounded-md w-full"
+			class="p-2 transition bg-fg-shade rounded-md w-full hover:bg-fg-light"
 			name="card-tags"
 			id="card-tags"
 			on:click|preventDefault>Tags</button
@@ -39,10 +39,12 @@
 
 		<label for="card-assign" class="sr-only">Assign someone to this task</label>
 		<button
-			class="p-2 transition bg-fg-shade rounded-md w-full"
+			class="p-2 transition bg-fg-shade rounded-md w-full hover:bg-fg-light"
 			name="card-tags"
 			id="card-tags"
 			on:click|preventDefault>Assign</button
 		>
+
+		<CardWeight weight={data.weight} />
 	</div>
 </form>
