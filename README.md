@@ -1,7 +1,3 @@
-<div align="center">
-  [Releases][releases] [Documentation][docs]
-</div>
-
 <h1 align="center">
   <img src="https://picsum.photos/400/300" alt="Lorem picsum temporary logo image" />
 </h1>
