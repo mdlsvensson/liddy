@@ -2,7 +2,7 @@
   <img src="https://picsum.photos/200/300" alt="Lorem picsum temporary logo image" />
 </h1>
 <h2 align="center">
-  <img alt="Iconic font aggregator, collection, and patcher" src="https://picsum.photos/100/300">
+  <img alt="Iconic font aggregator, collection, and patcher" src="https://picsum.photos/300/100">
 </h2>
 
 <div align="center">
