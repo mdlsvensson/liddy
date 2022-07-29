@@ -2,21 +2,21 @@ export interface Card {
   id: string;
   name: string,
   description: string,
-  assignee: string,
+  userId: string,
   createdAt: string,
   updatedAt: string,
-  dueDate: string,
+  dueAt: string,
   priority: number,
   weight: number,
   column: string,
-  tags: [],
-  comments: [],
-  attachments: [],
-  projects: [],
+  tags: Array<number>,
+  comments: Array<string>,
+  attachments: Array<string>,
+  projectId: string,
 }
 
 export interface Modal {
   isVisible: boolean;
   type: string;
-  data: Object;
+  data: object;
 }
