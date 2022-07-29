@@ -42,7 +42,7 @@
 
 ### `Self-host`
 
-> Best option if you want an **archive** or complete **font family** of variations (Bold, Italic, etc.).
+> Host on your own hardware or in the cloud.
 
 Fonts are available for download as packages in the [latest release](https://github.com/ryanoasis/nerd-fonts/releases/latest)
 
