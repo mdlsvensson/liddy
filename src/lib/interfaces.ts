@@ -20,3 +20,11 @@ export interface Modal {
   type: string;
   data: object;
 }
+
+export interface State {
+  isLoading: boolean;
+  isError: boolean;
+  isLoggedIn: boolean;
+  isDatabaseConnected: boolean;
+  project: object;
+}
