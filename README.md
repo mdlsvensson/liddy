@@ -11,8 +11,7 @@
 
 </div>
 
-**Liddy**. Free, open, and self-hostable project management app built with Svelte, TypeScript and Tailwindcss.
-
+**Free, open, and self-hostable** project management app built with Svelte, TypeScript and Tailwindcss.
 
 ## Important Notices
 * `master` branch file paths are **not** considered stable. [Verify your repository URI references](#unstable-file-paths)
