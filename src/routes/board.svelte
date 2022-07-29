@@ -3,7 +3,9 @@
 </script>
 
 <div class="h-full flex gap-6">
-	<Col title="Not Assigned" />
-	<Col title="Ready" />
+	<Col title="Backlog" />
+	<Col title="Unassigned" />
 	<Col title="In Progress" />
+	<Col title="Testing" />
+	<Col title="Done" />
 </div>
