@@ -13,17 +13,17 @@
 			id: '',
 			name: '',
 			description: '',
-			assignee: '',
+			userId: '',
 			createdAt: new Date().getTime().toString(),
 			updatedAt: new Date().getTime().toString(),
-			dueDate: '',
+			dueAt: '',
 			priority: 0,
 			weight: 1,
-			column: 'Not Assigned',
+			column: title,
 			tags: [],
 			comments: [],
 			attachments: [],
-			projects: [],
+			projectId: '',
 		};
 
 		$modal.data = newCard;
