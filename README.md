@@ -19,14 +19,14 @@
   * [**2 - Self-host**](#self-host)
 
 [**Configuration**](#configuration)
-  * [**GUI**](#config-gui)
-  * [**JSON**](#config-json)
+  * [**GUI**](#gui)
+  * [**JSON**](#json)
 
 [**Features**](#features)
-  * [**Projects**](#features-projects)
-  * [**Tasks**](#features-tasks)
-  * [**Gamification**](#features-gamification)
-  * [**Stats**](#features-stats)
+  * [**Projects & Epics**](#projects-epics)
+  * [**Tasks**](#tasks)
+  * [**Gamification**](#gamification)
+  * [**Stats**](#stats)
 
 [**Contributing**](#contributing)
   * [**Code of Conduct**](#contributing-code-of-conduct)
@@ -38,9 +38,7 @@
 
 ### `Supabase`
 
-> Best option for **quickly** getting a specific **individual font**.
-
-Download the specific [patched font](#patched-fonts) of your choice
+> [Open-source][supabase] Firebase alternative.
 
 ### `Self-host`
 
@@ -58,6 +56,15 @@ _Note_: **Requires cloning** the repo as of now
 
 ### `JSON`
 
+## Features
+
+### `Projects & Epics`
+
+### `Tasks`
+
+### `Gamification`
+
+### `Stats`
 
 
 
@@ -80,3 +87,4 @@ See [LICENSE][LICENSE]
 [ts]:https://github.com/microsoft/TypeScript
 [tailwind]:https://github.com/tailwindlabs/tailwindcss
 [postgres]:https://www.postgresql.org/
+[supabase]:https://github.com/supabase/supabase
