@@ -1,11 +1,15 @@
 import { writable, type Writable } from "svelte/store";
-import type { Modal } from "./interfaces";
+import type { Modal, State } from "./interfaces";
 
-export const state: Writable<Object> = writable({
+export const state: Writable<State> = writable({
   isLoading: false,
   isError: false,
   isLoggedIn: false,
   isDatabaseConnected: false,
+  project: {
+    id: "",
+    name: "First Project",
+  },
 });
 
 export const user: Writable<Object> = writable({
@@ -35,4 +39,5 @@ export const projects: Writable<Array<Object>> = writable([
 export const modal: Writable<Modal> = writable({
   isVisible: false,
   type: "",
+  data: {},
 });
