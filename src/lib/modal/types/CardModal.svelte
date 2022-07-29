@@ -5,31 +5,29 @@
 	export let nameInput: HTMLElement | undefined;
 </script>
 
-<form class="w-full h-full p-3 flex flex-col gap-2">
+<form class="w-full h-full p-3 flex flex-col gap-3">
+	<label class="sr-only" for="card-name">Task Name</label>
+	<input
+		type="text"
+		name="card-name"
+		id="card-name"
+		placeholder="Untitled"
+		maxlength="50"
+		class="p-2 text-lg w-full bg-fg rounded-md hover:ring-2 ring-fg-light focus:ring-2"
+		on:keypress
+		bind:value={data.name}
+		bind:this={nameInput}
+	/>
+
 	<div class="flex gap-2">
 		<label for="card-status" class="sr-only">Set the status of this task</label>
 		<button
-			class="px-6 bg-fg-shade rounded-md hover:bg-fg-light flex-shrink-0"
+			class="p-2 bg-fg-shade rounded-md w-full hover:bg-fg-light"
 			name="card-status"
 			id="card-status"
 			on:click|preventDefault>{data.column}</button
 		>
 
-		<label class="sr-only" for="card-name">Task Name</label>
-		<input
-			type="text"
-			name="card-name"
-			id="card-name"
-			placeholder="Untitled"
-			maxlength="50"
-			class="p-2 text-lg w-full bg-fg rounded-md hover:ring-2 ring-fg-light focus:ring-2"
-			on:keypress
-			bind:value={data.name}
-			bind:this={nameInput}
-		/>
-	</div>
-
-	<div class="flex gap-2">
 		<label for="card-assign" class="sr-only">Assign someone to this task</label>
 		<button
 			class="p-2 bg-fg-shade rounded-md w-full hover:bg-fg-light"
@@ -56,6 +54,7 @@
 
 		<CardPriority priority={data.priority} />
 	</div>
+
 	<div class="flex flex-col gap-4">
 		<textarea
 			name="card-description"
