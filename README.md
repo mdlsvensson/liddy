@@ -11,7 +11,7 @@
 
 </div>
 
-**Free, open, and self-hostable** project management app built with Svelte, TypeScript and Tailwindcss.
+**Free, open, and self-hostable** project management app built with [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].
 
 ## Important Notices
 * `master` branch file paths are **not** considered stable. [Verify your repository URI references](#unstable-file-paths)
@@ -492,3 +492,6 @@ See [LICENSE][LICENSE]
 
 [docs]:https://github.com/mdlsvensson/liddy/wiki
 [releases]:https://github.com/mdlsvensson/liddy/releases
+[svelte]:https://github.com/sveltejs/svelte
+[ts]:https://github.com/microsoft/TypeScript
+[tailwind]:https://github.com/tailwindlabs/tailwindcss
