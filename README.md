@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://picsum.photos/200/300" alt="Lorem picsum temporary logo image" />
+  <img src="https://picsum.photos/400/300" alt="Lorem picsum temporary logo image" />
 </h1>
 <h2 align="center">
   <img alt="Iconic font aggregator, collection, and patcher" src="https://picsum.photos/300/100">
