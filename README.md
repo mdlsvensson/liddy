@@ -10,7 +10,7 @@
 [Releases][releases]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Documentation][docs]
 
 **Self-hostable** project management.<br>
-[Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].<br>
+[Svelte][svelte], [TypeScript][ts] and [tailwind][tailwind].<br>
 With [PostgreSQL][postgres].<br>
 
 </div>
