@@ -1,11 +1,15 @@
 <script lang="ts">
 	import '../app.css';
-	import { modal } from '$lib/store';
+	import { modal, projects } from '$lib/store';
+	import { state } from '$lib/store';
 	import { page } from '$app/stores';
 
 	import Logo from '$lib/Logo.svelte';
 	import Nav from '$lib/nav/Nav.svelte';
 	import Modal from '$lib/modal/Modal.svelte';
+	import ProjectSwitcher from '$lib/ProjectSwitcher.svelte';
+
+	let project = $state.project;
 
 	// Global keybinds
 	if (typeof window !== 'undefined') {
@@ -24,6 +28,7 @@
 </svelte:head>
 
 <Modal />
+<ProjectSwitcher {project} />
 
 <div class="flex w-screen h-screen">
 	<header class="w-16 h-full bg-fg flex flex-col gap-6 items-center">
