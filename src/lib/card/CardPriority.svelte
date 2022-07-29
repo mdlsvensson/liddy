@@ -75,7 +75,7 @@
 			<div
 				class:bg-yellow={litElements[1]}
 				class:bg-yellow-dimmer={!litElements[1]}
-				class="rounded-l-sm w-full h-full pointer-events-none"
+				class="w-full h-full pointer-events-none"
 			/>
 		</button>
 		<button
@@ -91,7 +91,7 @@
 			<div
 				class:bg-red1={litElements[2]}
 				class:bg-red1-dimmer={!litElements[2]}
-				class="rounded-l-sm w-full h-full pointer-events-none"
+				class="rounded-r-sm w-full h-full pointer-events-none"
 			/>
 		</button>
 	</div>
