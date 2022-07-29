@@ -9,9 +9,9 @@
 
 [Releases][releases]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Documentation][docs]
 
-</div>
-
 **Free, open, and self-hostable** project management app built with [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind]. Uses [PostgreSQL][postgres].
+
+</div>
 
 ## Table of Contents
 
