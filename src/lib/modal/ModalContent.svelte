@@ -25,7 +25,11 @@
 
 {#if type === 'Card'}
 	<div class="w-[40vw] flex flex-col">
-		<ModalTitleBar title="New Task" />
+		{#if data.name === ''}
+			<ModalTitleBar title="New Task" />
+		{:else}
+			<ModalTitleBar title="Edit Task ({data.name})" />
+		{/if}
 		<CardModal bind:nameInput={popupFocusedElement} {data} on:keypress={onKeyPress} />
 	</div>
 {/if}
