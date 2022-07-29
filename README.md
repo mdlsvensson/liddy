@@ -9,9 +9,9 @@
 
 [Releases][releases]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Documentation][docs]
 
-**Gamified and self-hostable** project management app.
-[Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].
-Configured for [PostgreSQL][postgres] databases.
+**Gamified and self-hostable** project management app.<br>
+[Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].<br>
+Configured for [PostgreSQL][postgres] databases.<br>
 
 </div>
 
