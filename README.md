@@ -5,7 +5,7 @@
 <div align="center">
 
   **Self-hostable** project management.<br>
-  [Svelte][svelte], [TypeScript][ts] and [tailwind][tailwindcss].<br>
+  [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].<br>
   With [PostgreSQL][postgres].<br>
 
   [Releases][releases] [Documentation][docs]
