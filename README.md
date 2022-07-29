@@ -1,17 +1,14 @@
 <h1 align="center">
   <img src="https://picsum.photos/400/300" alt="Lorem picsum temporary logo image" />
 </h1>
-<h2 align="center">
-  <img alt="Iconic font aggregator, collection, and patcher" src="https://picsum.photos/300/100">
-</h2>
 
 <div align="center">
 
-[Releases][releases]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Documentation][docs]
+  **Self-hostable** project management.<br>
+  [Svelte][svelte], [TypeScript][ts] and [tailwind][tailwind].<br>
+  With [PostgreSQL][postgres].<br>
 
-**Self-hostable** project management.<br>
-[Svelte][svelte], [TypeScript][ts] and [tailwind][tailwind].<br>
-With [PostgreSQL][postgres].<br>
+  [Releases][releases]&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;[Documentation][docs]
 
 </div>
 
