@@ -8,7 +8,7 @@
   [Svelte][svelte], [TypeScript][ts] and [tailwind][tailwind].<br>
   With [PostgreSQL][postgres].<br>
 
-  [[Releases]][releases] [Documentation][docs]
+  [Releases][releases] [Documentation][docs]
 
 </div>
 
