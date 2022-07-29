@@ -11,12 +11,7 @@
 
 </div>
 
-**Free, open, and self-hostable** project management app built with [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].
-
-## Important Notices
-* `master` branch file paths are **not** considered stable. [Verify your repository URI references](#unstable-file-paths)
-* cloning this repository is **not** recommended ([due to Repo size](#option-5-clone-the-repo)) unless you are going to be [contributing to development](#contributing)
-
+**Free, open, and self-hostable** project management app built with [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind]. Uses [PostgreSQL][postgres].
 
 ## Table of Contents
 
@@ -50,12 +45,6 @@
   * [**Unstable file paths on master**](#unstable-file-paths)
   * [**Changelog**](#changelog)
   * [**License**](#license)
-
-
-## TL;DR
-  Nerd Fonts takes popular programming fonts and adds a bunch of Glyphs.
-  There is also a [font patcher](#font-patcher) available if your desired font isn't already patched.
-  For more high level information see the [wiki][wiki]. If you are looking for the Vim plugin see [VimDevIcons ➶][vim-devicons].
 
 ### Various Download Options for Fonts
 
@@ -495,3 +484,4 @@ See [LICENSE][LICENSE]
 [svelte]:https://github.com/sveltejs/svelte
 [ts]:https://github.com/microsoft/TypeScript
 [tailwind]:https://github.com/tailwindlabs/tailwindcss
+[postgres]:https://www.postgresql.org/
