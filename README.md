@@ -11,7 +11,7 @@
 
 **Self-hostable** project management.<br>
 [Svelte][svelte], [TypeScript][ts] and [tailwindcss][tailwind].<br>
-Using [PostgreSQL][postgres].<br>
+With [PostgreSQL][postgres].<br>
 
 </div>
 
