@@ -1,5 +1,5 @@
 <div align="center">
-  [Realeases][releases] [Documentation][docs]
+  [Releases][releases] [Documentation][docs]
 </div>
 
 <h1 align="center">
