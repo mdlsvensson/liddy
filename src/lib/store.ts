@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import type { Modal, State, Column, Project } from "./interfaces";
+import type { Modal, State, Column, Project, User } from "./interfaces";
 
 export const state: Writable<State> = writable({
   isNewUser: true,
@@ -7,19 +7,18 @@ export const state: Writable<State> = writable({
   isError: false,
   isLoggedIn: false,
   isDatabaseConnected: false,
-  project: {
-    id: "",
-    name: "First Project",
-  },
 });
 
-export const user: Writable<Object> = writable({
+export const user: Writable<User> = writable({
   id: "",
-  createdAt: "",
-  updatedAt: "",
   name: "",
   email: "",
   isAdmin: false,
+  projects: [],
+  createdAt: "",
+  updatedAt: "",
+  lastLogin: "",
+  lastLoginIp: "",
 });
 
 export const project: Writable<Project> = writable(
@@ -28,6 +27,7 @@ export const project: Writable<Project> = writable(
     name: "",
     description: "",
     columns: [],
+    members: [],
     isActive: false,
     isArchived: false,
     isDeleted: false,
@@ -39,7 +39,7 @@ export const project: Writable<Project> = writable(
   }
 );
 
-export const columns: Writable<Column> = writable({
+export const column: Writable<Column> = writable({
   id: "",
   title: "",
   color: "",
