@@ -4,6 +4,7 @@
 	import ColTitleBar from './ColTitleBar.svelte';
 
 	export let title: string;
+	export let color: string;
 
 	const handleClickTitleBar = () => {
 		$modal.isVisible = true;
@@ -31,6 +32,6 @@
 </script>
 
 <div class="flex flex-col gap-3">
-	<ColTitleBar on:click={handleClickTitleBar}>{title}</ColTitleBar>
+	<ColTitleBar on:click={handleClickTitleBar} {color}>{title}</ColTitleBar>
 	<div class="min-w-[300px] max-w-[400px] h-full bg-fg rounded-xl flex flex-col" />
 </div>
