@@ -36,9 +36,9 @@ Readme is just a template as of now.
 
 ## Setup
 
-### `[Supabase][supabase]`
+### `Supabase`
 
-> [Open-source][supabase] Firebase alternative.
+> Open-source [Firebase alternative][supabase] .
 
 ### `Self-host`
 
