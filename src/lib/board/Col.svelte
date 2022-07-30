@@ -15,16 +15,15 @@
 			name: '',
 			description: '',
 			userId: '',
-			createdAt: new Date().getTime().toString(),
-			updatedAt: new Date().getTime().toString(),
-			dueAt: '',
+			createdAt: new Date().getTime(),
+			updatedAt: new Date().getTime(),
+			dueAt: null,
 			priority: 0,
-			weight: 1,
+			weight: 0,
 			column: title,
 			tags: [],
 			comments: [],
 			attachments: [],
-			projectId: '',
 		};
 
 		$modal.data = newCard;
