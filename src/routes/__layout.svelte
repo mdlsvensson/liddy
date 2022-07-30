@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import { modal, projects } from '$lib/store';
+	import { modal } from '$lib/store';
 	import { state } from '$lib/store';
-	import { page } from '$app/stores';
 
 	import Logo from '$lib/Logo.svelte';
 	import Nav from '$lib/nav/Nav.svelte';
