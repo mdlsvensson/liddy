@@ -15,8 +15,8 @@ Readme is just a template as of now.
 ## Contents
 
 [**Setup**](#setup)
-  * [**1 - Supabase**](#supabase)
-  * [**2 - Self-host**](#self-host)
+  * [**Supabase**](#supabase)
+  * [**Self-host**](#self-host)
 
 [**Configuration**](#configuration)
   * [**GUI**](#gui)
