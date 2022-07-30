@@ -2,6 +2,8 @@
   <img src="https://picsum.photos/400/300" alt="Lorem picsum temporary logo image" />
 </h1>
 
+Readme is just a template as of now.
+
 <div align="center">
 
   **Self-hostable** project management.<br>
@@ -42,15 +44,11 @@
 
 > Host on your own hardware or in the cloud.
 
-Fonts are available for download as packages in the [latest release](https://github.com/ryanoasis/nerd-fonts/releases/latest)
+_Note_: **Temp**.
 
 ## Configuration
 
 ### `GUI`
-
-> Best option if you want to **automate** installing or for use in **scripts**.
-
-_Note_: **Requires cloning** the repo as of now
 
 ### `JSON`
 
@@ -64,20 +62,9 @@ _Note_: **Requires cloning** the repo as of now
 
 ### `Stats`
 
-
-
-## Project Motivation
-
-See [Wiki: Project Purpose][wiki-project-purpose]
-
+## Why liddy?
 
 ## Changelog
-
-See [changelog.md](changelog.md)
-
-## License
-
-See [LICENSE][LICENSE]
 
 [docs]:https://github.com/mdlsvensson/liddy/wiki
 [releases]:https://github.com/mdlsvensson/liddy/releases
