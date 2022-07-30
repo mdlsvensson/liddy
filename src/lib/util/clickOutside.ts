@@ -1,4 +1,4 @@
-export function clickOutside(node) {
+export default function clickOutside(node) {
   
   const handleClick = (event: MouseEvent) => {
     if (node && !node.contains(event.target) && !event.defaultPrevented) {
