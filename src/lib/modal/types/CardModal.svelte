@@ -3,12 +3,12 @@
 	import colorOptions from '$lib/util/colorOptions';
 
 	export let mode: string;
-	export let data: any;
+	export let data: Record<string, any>;
 	export let nameInput: HTMLElement | undefined;
 </script>
 
 <form class="w-full h-full p-3 flex flex-col gap-3">
-	<label class="sr-only" for="card-name">Task Name</label>
+	<label class="sr-only" for="card-name">Enter a name for this task</label>
 	<input
 		type="text"
 		name="card-name"
