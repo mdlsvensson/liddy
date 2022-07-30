@@ -27,9 +27,10 @@
 	<div class="w-[40vw] flex flex-col">
 		{#if data.name === ''}
 			<ModalTitleBar title="New Task" />
+			<CardModal bind:nameInput={popupFocusedElement} {data} on:keypress={onKeyPress} mode="new" />
 		{:else}
 			<ModalTitleBar title="Edit Task ({data.name})" />
+			<CardModal bind:nameInput={popupFocusedElement} {data} on:keypress={onKeyPress} mode="edit" />
 		{/if}
-		<CardModal bind:nameInput={popupFocusedElement} {data} on:keypress={onKeyPress} />
 	</div>
 {/if}
