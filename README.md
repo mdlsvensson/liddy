@@ -36,7 +36,7 @@ Readme is just a template as of now.
 
 ## Setup
 
-### `Supabase`
+### `[Supabase][supabase]`
 
 > [Open-source][supabase] Firebase alternative.
 
