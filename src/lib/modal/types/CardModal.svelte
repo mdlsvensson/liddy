@@ -1,6 +1,8 @@
 <script lang="ts">
 	import CardPriority from '$lib/card/CardPriority.svelte';
+	import colorOptions from '$lib/util/colorOptions';
 
+	export let mode: string;
 	export let data: any;
 	export let nameInput: HTMLElement | undefined;
 </script>
@@ -64,13 +66,15 @@
 			class="w-full h-40 bg-fg resize-none text-text-fg py-2 px-3 rounded-md hover:ring-2 ring-fg-light focus:ring-2"
 		/>
 		<div class="flex justify-center">
-			<label for="card-done" class="sr-only">Submit this task to the project</label>
-			<button
-				class="p-3 px-20 bg-fg-shade rounded-md hover:bg-fg-light text-lg"
-				name="card-done"
-				id="card-done"
-				on:click|preventDefault>Done</button
-			>
+			{#if mode === 'new'}
+				<label for="card-add" class="sr-only">Submit this task to the project</label>
+				<button
+					class="p-3 px-20 bg-fg-shade rounded-md hover:bg-fg-light text-lg"
+					name="card-add"
+					id="card-add"
+					on:click|preventDefault>Add</button
+				>
+			{/if}
 		</div>
 	</div>
 </form>
