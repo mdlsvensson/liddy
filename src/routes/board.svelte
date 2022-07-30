@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { state, columns } from '$lib/store';
+	import { state, column } from '$lib/store';
 	import colorOptions from '$lib/util/colorOptions';
 	import Col from '$lib/board/Col.svelte';
 
