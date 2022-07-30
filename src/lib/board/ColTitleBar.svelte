@@ -2,8 +2,6 @@
 	import Icon from '$lib/common/Icon.svelte';
 
 	export let color: string;
-
-	console.log(color);
 </script>
 
 <div
