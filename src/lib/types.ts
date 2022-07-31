@@ -36,20 +36,16 @@ export interface Db {
   isConnecting: boolean;
 }
 
-export interface User {
-  id: string;
-  name: string;
-  description: string;
+export type User = {
   email: string;
+  isNewUser: boolean;
   isAdmin: boolean;
   projects: Project[];
-  lastLogin: number;
-  lastLoginIp: number;
-}
+  lastLogin: number | null;
+  lastLoginIp: number | null;
+} & Id & Descriptor & Dated;
 
 export type Project = {
-  name: string;
-  description: string;
   members: User[];
   columns: Column[];
   isActive: boolean;
@@ -57,8 +53,7 @@ export type Project = {
   isDeleted: boolean;
   isPublic: boolean;
   isLocked: boolean;
-  ownerId: string;
-} & Id;
+} & Id & Descriptor & Dated & DueDate & Owner;
 
 export type Column = {
   color: string;
