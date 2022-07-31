@@ -9,35 +9,9 @@ export const state: Writable<State> = writable({
   isDatabaseConnected: false,
 });
 
-export const user: Writable<User> = writable({
-  id: "",
-  name: "",
-  email: "",
-  isAdmin: false,
-  projects: [],
-  createdAt: "",
-  updatedAt: "",
-  lastLogin: "",
-  lastLoginIp: "",
-});
+export const user: Writable<User> = writable();
 
-export const project: Writable<Project> = writable(
-  {
-    id: "",
-    name: "",
-    description: "",
-    columns: [],
-    members: [],
-    isActive: false,
-    isArchived: false,
-    isDeleted: false,
-    isPublic: false,
-    isLocked: false,
-    createdAt: "",
-    updatedAt: "",
-    dueAt: "",
-  }
-);
+export const project: Writable<Project> = writable();
 
 export const column: Writable<Column> = writable({
   id: "",
