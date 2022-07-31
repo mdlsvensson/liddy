@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { modal } from '$lib/store';
-	import type { Card } from '$lib/interfaces';
-	import ColTitleBar from './ColTitleBar.svelte';
+	import { newCard } from '$lib/common';
+	import ColTitleBar from '$lib/board/ColTitleBar.svelte';
 
 	export let title: string;
 	export let color: string;
@@ -9,24 +9,7 @@
 	const handleClickTitleBar = () => {
 		$modal.isVisible = true;
 		$modal.type = 'Card';
-
-		const newCard = <Card>{
-			id: '',
-			name: '',
-			description: '',
-			userId: '',
-			createdAt: new Date().getTime(),
-			updatedAt: new Date().getTime(),
-			dueAt: null,
-			priority: 0,
-			weight: 0,
-			column: title,
-			tags: [],
-			comments: [],
-			attachments: [],
-		};
-
-		$modal.data = newCard;
+		$modal.data = newCard({ ownerId: '1' });
 	};
 </script>
 
