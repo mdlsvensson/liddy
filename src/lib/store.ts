@@ -1,5 +1,5 @@
 import { writable, type Writable } from "svelte/store";
-import type { Modal, State, Column, Project, User } from "./interfaces";
+import type { Modal, State, Column, Project, User } from "./types";
 
 export const state: Writable<State> = writable({
   isNewUser: true,
