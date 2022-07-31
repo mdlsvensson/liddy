@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	import { state, modal, project } from '$lib/store';
-	import type { Project } from '$lib/interfaces';
+	import { state, modal, project, user } from '$lib/store';
+	import { newUser, newProject } from '$lib/common';
 
 	import Logo from '$lib/Logo.svelte';
 	import Nav from '$lib/nav/Nav.svelte';
@@ -9,23 +9,11 @@
 	import ProjectSwitcher from '$lib/ProjectSwitcher.svelte';
 
 	if ($state.isNewUser) {
+		$user = newUser();
+
 		$modal.isVisible = true;
 		$modal.type = 'Project';
-		$modal.data = <Project>{
-			id: '',
-			name: '',
-			description: '',
-			members: [],
-			columns: [],
-			isActive: true,
-			isArchived: false,
-			isDeleted: false,
-			isPublic: false,
-			isLocked: false,
-			createdAt: new Date().getTime(),
-			updatedAt: new Date().getTime(),
-			dueAt: null,
-		};
+		$modal.data = newProject({ ownerId: '1' });
 	}
 
 	// Global keybinds
@@ -45,7 +33,8 @@
 </svelte:head>
 
 <Modal />
-{#if $project.name != ''}
+
+{#if $project != undefined}
 	<ProjectSwitcher project={$project.name} />
 {/if}
 
