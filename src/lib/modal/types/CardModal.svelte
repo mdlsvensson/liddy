@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { modal } from '$lib/store';
+	import { ModalMode } from '$lib/common';
 	import CardPriority from '$lib/card/CardPriority.svelte';
 	import colorOptions from '$lib/util/colorOptions';
 
-	export let mode: string;
-	export let data: Record<string, any>;
 	export let nameInput: HTMLElement | undefined;
 </script>
 
@@ -17,7 +17,7 @@
 		maxlength="50"
 		class="p-2 text-lg w-full bg-fg rounded-md hover:ring-2 ring-fg-light focus:ring-2"
 		on:keypress
-		bind:value={data.name}
+		bind:value={$modal.data.name}
 		bind:this={nameInput}
 	/>
 
@@ -27,7 +27,7 @@
 			class="p-2 bg-fg-shade rounded-md w-full hover:bg-fg-light"
 			name="card-status"
 			id="card-status"
-			on:click|preventDefault>{data.column}</button
+			on:click|preventDefault>{$modal.data.column}</button
 		>
 
 		<label for="card-assign" class="sr-only">Assign someone to this task</label>
@@ -54,7 +54,7 @@
 			on:click|preventDefault>Dependencies</button
 		>
 
-		<CardPriority priority={data.priority} />
+		<CardPriority priority={$modal.data.priority} />
 	</div>
 
 	<div class="flex flex-col gap-4">
@@ -66,7 +66,7 @@
 			class="w-full h-40 bg-fg resize-none text-text-fg py-2 px-3 rounded-md hover:ring-2 ring-fg-light focus:ring-2"
 		/>
 		<div class="flex justify-center">
-			{#if mode === 'new'}
+			{#if $modal.mode === ModalMode.CREATE}
 				<label for="card-add" class="sr-only">Submit this task to the project</label>
 				<button
 					class="p-3 px-20 bg-fg-shade rounded-md hover:bg-fg-light text-lg"
