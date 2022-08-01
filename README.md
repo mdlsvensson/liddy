@@ -42,7 +42,7 @@ Readme is just a template as of now.
 
 ### `Self-host`
 
-> Host on your own hardware or in the cloud.
+> Host on your own hardware or in the cloud. COMING SOON.
 
 _Note_: **Temp**.
 
