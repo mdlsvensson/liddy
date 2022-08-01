@@ -1,21 +1,25 @@
-import type { Id, Descriptor, Dated, DueDate, Owner, Card } from "$lib/types";
+import type { Id, Descriptor, Dated, DueDate, Owner, Title } from "$lib/types";
 
-export const id = ({ id }: { id: string }): Id => {
+export const newId = ({ id }: { id: string }): Id => {
   return { id };
 };
 
-export const descriptor = ({ name, description }: { name: string, description: string }): Descriptor => {
+export const newTitle = ({ title }: { title: string }): Title => {
+  return { title };
+};
+
+export const newDescriptor = ({ name, description }: { name: string, description: string }): Descriptor => {
   return { name, description }
 };
 
-export const dated = ({ createdAt, updatedAt }: { createdAt: number | null, updatedAt: number | null }): Dated => {
+export const newDated = ({ createdAt, updatedAt }: { createdAt: number | null, updatedAt: number | null }): Dated => {
   return { createdAt, updatedAt }
 };
 
-export const dueDate = ({ dueDate }: { dueDate: number | null }): DueDate => {
+export const newDueDate = ({ dueDate }: { dueDate: number | null }): DueDate => {
   return { dueDate };
 };
 
-export const owner = ({ ownerId }: { ownerId: string }): Owner => {
+export const newOwner = ({ ownerId }: { ownerId: string }): Owner => {
   return { ownerId };
 };
