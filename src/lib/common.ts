@@ -9,6 +9,7 @@ export const newUser = (): User => ({
   isNewUser: true,
   isAdmin: false,
   projects: [],
+  memberOf: [],
   lastLogin: new Date().getTime(),
   lastLoginIp: null,
 });
@@ -29,14 +30,15 @@ export const newProject = ({ ownerId }: { ownerId: string }): Project => ({
   isLocked: false,
 });
 
-export const newColumn = ({ title, color }: { title: string, color: string }): Column => ({
+export const newColumn = ({ title, color, projectId }: { title: string, color: string, projectId: string }): Column => ({
   ...newId({ id: "" }),
   ...newTitle({ title }),
-  color: color,
+  color,
   cards: [],
+  projectId,
 });
 
-export const newCard = ({ ownerId }: { ownerId: string }): Card => ({
+export const newCard = ({ ownerId, columnId }: { ownerId: string, columnId: string }): Card => ({
   ...newId({ id: "" }),
   ...newDescriptor({ name: '', description: '' }),
   ...newDated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
@@ -47,6 +49,7 @@ export const newCard = ({ ownerId }: { ownerId: string }): Card => ({
   tags: [],
   comments: [],
   attachments: [],
+  columnId,
 });
 
 export enum ModalType {
