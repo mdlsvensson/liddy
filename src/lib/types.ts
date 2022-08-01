@@ -41,6 +41,7 @@ export type User = {
   isNewUser: boolean;
   isAdmin: boolean;
   projects: Project[];
+  memberOf: Project[];
   lastLogin: number | null;
   lastLoginIp: number | null;
 } & Id & Descriptor & Dated;
@@ -59,6 +60,7 @@ export type Project = {
 export type Column = {
   color: string;
   cards: Card[];
+  projectId: string;
 } & Id & Title;
 
 export type Card = {
@@ -67,6 +69,7 @@ export type Card = {
   tags: number[],
   comments: string[],
   attachments: string[],
+  columnId: string,
 } & Id & Descriptor & Dated & DueDate & Owner;
 
 export interface Modal {
