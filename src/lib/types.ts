@@ -48,6 +48,7 @@ export type User = {
 export type Project = {
   members: User[];
   columns: Column[];
+  isNewProject: boolean;
   isActive: boolean;
   isArchived: boolean;
   isDeleted: boolean;
@@ -58,7 +59,7 @@ export type Project = {
 export type Column = {
   color: string;
   cards: Card[];
-} & Id & Descriptor;
+} & Id & Title;
 
 export type Card = {
   priority: number,
@@ -70,6 +71,7 @@ export type Card = {
 
 export interface Modal {
   isVisible: boolean;
-  type: string;
+  type: number;
+  mode: number;
   data: Record<string, any>;
 }
