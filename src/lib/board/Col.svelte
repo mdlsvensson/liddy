@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { modal } from '$lib/store';
-	import { newCard } from '$lib/common';
+	import { newCard, ModalMode, ModalType } from '$lib/common';
 	import ColTitleBar from '$lib/board/ColTitleBar.svelte';
 
 	export let title: string;
@@ -8,7 +8,8 @@
 
 	const handleClickTitleBar = () => {
 		$modal.isVisible = true;
-		$modal.type = 'Card';
+		$modal.type = ModalType.CARD;
+		$modal.mode = ModalMode.CREATE;
 		$modal.data = newCard({ ownerId: '1' });
 	};
 </script>
