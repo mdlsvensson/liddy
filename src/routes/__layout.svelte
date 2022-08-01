@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { state, modal, project, user } from '$lib/store';
-	import { newUser, newProject } from '$lib/common';
+	import { newUser, newProject, ModalType, ModalMode } from '$lib/common';
 
 	import Logo from '$lib/Logo.svelte';
 	import Nav from '$lib/nav/Nav.svelte';
@@ -12,7 +12,8 @@
 		$user = newUser();
 
 		$modal.isVisible = true;
-		$modal.type = 'Project';
+		$modal.type = ModalType.PROJECT;
+		$modal.mode = ModalMode.CREATE;
 		$modal.data = newProject({ ownerId: '1' });
 	}
 
