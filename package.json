@@ -36,7 +36,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dotenv": "^16.0.1",
-		"postgres": "^3.2.4"
+		"@supabase/supabase-js": "^1.35.4"
 	}
 }
