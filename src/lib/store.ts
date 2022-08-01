@@ -22,6 +22,7 @@ export const column: Writable<Column> = writable({
 
 export const modal: Writable<Modal> = writable({
   isVisible: false,
-  type: "",
+  type: 0,
+  mode: 0,
   data: {},
 });
