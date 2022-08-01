@@ -1,10 +1,10 @@
-import type { Card, User, Project } from "$lib/types";
-import { id, descriptor, dated, dueDate, owner } from "$lib/factories";
+import type { Card, User, Project, Column } from "$lib/types";
+import { newId, newDescriptor, newDated, newDueDate, newOwner, newTitle } from "$lib/factories";
 
 export const newUser = (): User => ({
-  ...id({ id: "" }),
-  ...descriptor({ name: "", description: "" }),
-  ...dated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
+  ...newId({ id: "" }),
+  ...newDescriptor({ name: "", description: "" }),
+  ...newDated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
   email: "",
   isNewUser: true,
   isAdmin: false,
@@ -14,29 +14,48 @@ export const newUser = (): User => ({
 });
 
 export const newProject = ({ ownerId }: { ownerId: string }): Project => ({
-  ...id({ id: "" }),
-  ...descriptor({ name: '', description: '' }),
-  ...dated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
-  ...dueDate({ dueDate: null }),
-  ...owner({ ownerId }),
+  ...newId({ id: "" }),
+  ...newDescriptor({ name: '', description: '' }),
+  ...newDated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
+  ...newDueDate({ dueDate: null }),
+  ...newOwner({ ownerId }),
   members: [],
   columns: [],
-  isActive: false,
+  isNewProject: true,
+  isActive: true,
   isArchived: false,
   isDeleted: false,
   isPublic: false,
   isLocked: false,
 });
 
+export const newColumn = ({ title, color }: { title: string, color: string }): Column => ({
+  ...newId({ id: "" }),
+  ...newTitle({ title }),
+  color: color,
+  cards: [],
+});
+
 export const newCard = ({ ownerId }: { ownerId: string }): Card => ({
-  ...id({ id: "" }),
-  ...descriptor({ name: '', description: '' }),
-  ...dated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
-  ...dueDate({ dueDate: null }),
-  ...owner({ ownerId }),
+  ...newId({ id: "" }),
+  ...newDescriptor({ name: '', description: '' }),
+  ...newDated({ createdAt: new Date().getTime(), updatedAt: new Date().getTime() }),
+  ...newDueDate({ dueDate: null }),
+  ...newOwner({ ownerId }),
   priority: 0,
   weight: 0,
   tags: [],
   comments: [],
   attachments: [],
 });
+
+export enum ModalType {
+  PROJECT,
+  COLUMN,
+  CARD,
+};
+
+export enum ModalMode {
+  CREATE,
+  EDIT,
+};
