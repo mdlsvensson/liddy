@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { modal, state } from '$lib/store';
+	import { ModalType, ModalMode } from '$lib/common';
 	import clickOutside from '$lib/util/clickOutside';
 	import ModalTitleBar from './ModalTitleBar.svelte';
 	import CardModal from './types/CardModal.svelte';
@@ -32,52 +33,27 @@
 	use:clickOutside
 	on:click_outside={onClickOutside}
 >
-	{#if $modal.type === 'Card'}
+	{#if $modal.type === ModalType.PROJECT}
 		<div class="w-[40vw] flex flex-col">
-			{#if $modal.data.name === ''}
-				<ModalTitleBar title="New Task" />
-				<CardModal
-					mode="new"
-					bind:nameInput={popupFocusedElement}
-					data={$modal.data}
-					on:keypress={onKeyPress}
-				/>
-			{:else}
-				<ModalTitleBar title="Edit Task ({$modal.data.name})" />
-				<CardModal
-					mode="edit"
-					bind:nameInput={popupFocusedElement}
-					data={$modal.data}
-					on:keypress={onKeyPress}
-				/>
+			{#if $modal.mode === ModalMode.CREATE && $state.isNewUser}
+				<ModalTitleBar title="Create Your First Project" />
+				<ProjectModal bind:nameInput={popupFocusedElement} on:keypress={onKeyPress} />
+			{:else if $modal.mode === ModalMode.CREATE}
+				<ModalTitleBar title="New Project" />
+				<ProjectModal bind:nameInput={popupFocusedElement} on:keypress={onKeyPress} />
+			{:else if $modal.mode === ModalMode.EDIT}
+				<ModalTitleBar title="Edit Project ({$modal.data.name})" />
+				<ProjectModal bind:nameInput={popupFocusedElement} on:keypress={onKeyPress} />
 			{/if}
 		</div>
-	{:else if $modal.type === 'Project'}
+	{:else if $modal.type === ModalType.CARD}
 		<div class="w-[40vw] flex flex-col">
-			{#if $state.isNewUser}
-				<ModalTitleBar title="Create Your First Project" />
-				<ProjectModal
-					mode="new"
-					bind:nameInput={popupFocusedElement}
-					data={$modal.data}
-					on:keypress={onKeyPress}
-				/>
-			{:else if $modal.data.name === ''}
-				<ModalTitleBar title="New Project" />
-				<ProjectModal
-					mode="new"
-					bind:nameInput={popupFocusedElement}
-					data={$modal.data}
-					on:keypress={onKeyPress}
-				/>
-			{:else}
-				<ModalTitleBar title="Edit Project ({$modal.data.name})" />
-				<ProjectModal
-					mode="edit"
-					bind:nameInput={popupFocusedElement}
-					data={$modal.data}
-					on:keypress={onKeyPress}
-				/>
+			{#if $modal.mode === ModalMode.CREATE}
+				<ModalTitleBar title="New Task" />
+				<CardModal bind:nameInput={popupFocusedElement} on:keypress={onKeyPress} />
+			{:else if $modal.mode === ModalMode.EDIT}
+				<ModalTitleBar title="Edit Task ({$modal.data.name})" />
+				<CardModal bind:nameInput={popupFocusedElement} on:keypress={onKeyPress} />
 			{/if}
 		</div>
 	{/if}
