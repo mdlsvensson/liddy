@@ -1,21 +1,17 @@
 <script lang="ts">
 	import '../app.css';
-	import { state, modal, project, user } from '$lib/store';
-	import { newUser, newProject, ModalType, ModalMode } from '$lib/common';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/env';
+	import { state, modal, project, user } from '$lib/stores';
+	import { ModalType, ModalMode } from '$lib/common';
+	import { newUser, newProject } from '$lib/factories';
 
 	import Logo from '$lib/Logo.svelte';
 	import Nav from '$lib/nav/Nav.svelte';
 	import Modal from '$lib/modal/Modal.svelte';
 	import ProjectSwitcher from '$lib/ProjectSwitcher.svelte';
-
-	if ($state.isNewUser) {
-		$user = newUser();
-
-		$modal.isVisible = true;
-		$modal.type = ModalType.PROJECT;
-		$modal.mode = ModalMode.CREATE;
-		$modal.data = newProject({ ownerId: '1' });
-	}
+	import Login from '$lib/auth/Login.svelte';
 
 	// Global keybinds
 	if (typeof window !== 'undefined') {
@@ -40,12 +36,18 @@
 {/if}
 
 <div class="flex w-screen h-screen">
-	<header class="w-16 h-full bg-fg flex flex-col gap-6 items-center">
-		<Logo />
-		<Nav />
-	</header>
+	{#if $user}
+		<header class="w-16 h-full bg-bg2 flex flex-col gap-6 items-center">
+			<Logo />
+			<Nav />
+		</header>
+	{/if}
 
-	<main class="bg-bg w-full p-6">
-		<slot />
+	<main class="w-full p-6">
+		{#if !$user}
+			<Login />
+		{:else}
+			<slot />
+		{/if}
 	</main>
 </div>
