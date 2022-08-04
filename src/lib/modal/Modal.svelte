@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modal, state } from '$lib/store';
+	import { modal, state } from '$lib/stores';
 	import { ModalType, ModalMode } from '$lib/common';
 	import clickOutside from '$lib/util/clickOutside';
 	import ModalTitleBar from './ModalTitleBar.svelte';
@@ -20,7 +20,7 @@
 		if (element instanceof HTMLElement) element.blur();
 	};
 
-	$: if ($modal.isVisible && $modal.data.name === '') {
+	$: if ($modal.isVisible) {
 		if (popupFocusedElement != undefined) {
 			popupFocusedElement.focus();
 		}
