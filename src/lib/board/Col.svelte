@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modal } from '$lib/store';
+	import { modal } from '$lib/stores';
 	import { newCard, ModalMode, ModalType } from '$lib/common';
 	import ColTitleBar from '$lib/board/ColTitleBar.svelte';
 
