@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { project } from '$lib/store';
+	import { project } from '$lib/stores';
 	import { newColumn } from '$lib/common';
 	import colorOptions from '$lib/util/colorOptions';
 	import Col from '$lib/board/Col.svelte';
@@ -10,6 +10,7 @@
 			newColumn({
 				title: 'Backlog',
 				color: colorOptions.gray,
+				projectId,
 			}),
 			newColumn({
 				title: 'Unassigned',
