@@ -20,23 +20,43 @@
 </script>
 
 <div class="w-full h-full flex justify-center items-center">
-	<Icon name="discord" />
-	<Icon name="github" />
-
-	<form class="w-[350px] flex flex-col gap-4 on:submit|preventDefault={handleLogin}">
-		<input
-			class="pb-4 px-6 pt-[17px] w-full bg-bg2 rounded-md hover:ring-2 ring-bg3"
-			type="email"
-			placeholder="Your email"
-		/>
-
-		<div class="w-full h-14">
+	<form class="w-[350px] flex flex-col gap-10" on:submit|preventDefault={handleLogin}>
+		<div class="flex flex-col gap-4">
 			<input
-				type="submit"
-				value={loading ? 'Loading' : 'Send login link'}
-				disabled={loading}
-				class="h-full bg-orange rounded-md w-full text-bg1 font-bold text-bg border-orange-dim border-b-4 hover:border-b-0 hover:translate-y-[4px] hover:h-[52px] transition-all"
+				class="pb-4 px-6 pt-[17px] w-full bg-bg2 rounded-md hover:ring-2 ring-bg3"
+				type="email"
+				placeholder="Your email"
 			/>
+
+			<div class="w-full h-14">
+				<input
+					type="submit"
+					value={loading ? 'Loading' : 'Send login link'}
+					disabled={loading}
+					class="h-full bg-orange rounded-md w-full text-bg1 font-bold text-bg border-orange-dim border-b-4 hover:border-b-0 hover:translate-y-[4px] hover:h-[52px] transition-all"
+				/>
+			</div>
+		</div>
+
+		<div class="flex justify-center gap-2 fill-text bg-bg2 px-4 py-3 rounded-full">
+			<button class="h-[46px]">
+				<Icon name="google" />
+			</button>
+			<button class="h-[46px]">
+				<Icon name="apple" />
+			</button>
+			<button class="h-[46px]">
+				<Icon name="linkedin" />
+			</button>
+			<button class="h-[46px]">
+				<Icon name="github" />
+			</button>
+			<button class="h-[46px]">
+				<Icon name="slack" />
+			</button>
+			<button class="h-[46px]">
+				<Icon name="discord" />
+			</button>
 		</div>
 	</form>
 </div>
