@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modal } from '$lib/store';
+	import { modal } from '$lib/stores';
 	import Icon from '$lib/common/Icon.svelte';
 
 	export let title: string;
