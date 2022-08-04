@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { project, modal, user } from '$lib/store';
+	import { project, modal, user } from '$lib/stores';
 	import type { Project } from '$lib/types';
 	import { ModalMode } from '$lib/common';
 
