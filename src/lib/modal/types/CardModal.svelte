@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modal } from '$lib/store';
+	import { modal } from '$lib/stores';
 	import { ModalMode } from '$lib/common';
 	import CardPriority from '$lib/card/CardPriority.svelte';
 	import colorOptions from '$lib/util/colorOptions';
