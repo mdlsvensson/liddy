@@ -6,8 +6,12 @@
   @apply focus:outline-none
 }
 
+body {
+  @apply bg-bg1;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, label, input, button {
-  @apply text-text-fg;
+  @apply text-text;
 }
 
 .dim {
