@@ -74,7 +74,7 @@ export type Card = {
 
 export interface Modal {
   isVisible: boolean;
-  type: number;
-  mode: number;
+  type: number | null;
+  mode: number | null;
   data: Record<string, any>;
 }
