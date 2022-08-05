@@ -83,5 +83,5 @@ export type Modal = {
 } & Visibility;
 
 export type Tooltip = {
-  text: string;
+  text?: string;
 } & Visibility;
