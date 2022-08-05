@@ -29,9 +29,9 @@ Readme is just a template as of now.
   * [**Stats**](#stats)
 
 [**Contributing**](#contributing)
-  * [**Code of Conduct**](#contributing-code-of-conduct)
-  * [**Getting Started**](#contributing-getting-started)
-  * [**Community**](#contributing-community)
+  * [**Code of Conduct**](#rules)
+  * [**Getting Started**](#getting-started)
+  * [**Community**](#community)
 
 
 ## Setup
@@ -61,6 +61,16 @@ _Note_: **Temp**.
 ### `Gamification`
 
 ### `Stats`
+
+## Contributing
+
+### `Rules`
+
+### `Getting Started`
+
+app.css contains global rules for non-class/id selectors only.
+
+### `Community`
 
 ## Why liddy?
 
