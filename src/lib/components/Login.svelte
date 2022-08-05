@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { supabase } from '$lib/supabaseClient';
 	import { user } from '$lib/stores';
-	import Icon from '$lib/common/Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	let email: string;
 	let errorText = '';
