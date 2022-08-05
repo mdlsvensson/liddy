@@ -7,9 +7,9 @@
 	let height: number;
 
 	const onMouseMove = (event: MouseEvent) => {
-		if (!tooltip) return;
-		tooltipEl.style.left = `${event.pageX}px`;
-		tooltipEl.style.top = `${event.pageY}px`;
+		if (!tooltipEl) return;
+		tooltipEl.style.left = `${event.pageX + 15}px`;
+		tooltipEl.style.top = `${event.pageY + 15}px`;
 	};
 
 	if (browser) {
@@ -18,10 +18,11 @@
 </script>
 
 <div
-	class="absolute top-0 left-0 w-[200px] h-[200px] bg-bg3 z-50 rounded-md border-bg4 border-2 shadow-lg"
+	class="absolute top-0 left-0 max-w-[500px] bg-bg3 z-50 rounded-md border-bg4 border-2 shadow pointer-events-none px-2 py-1 text-text1 text-sm opacity-0 transition duration-100"
 	bind:this={tooltipEl}
 	bind:clientHeight={height}
 	bind:clientWidth={width}
+	class:opacity-100={$tooltip.isVisible}
 >
-	<slot />
+	{$tooltip.text}
 </div>
