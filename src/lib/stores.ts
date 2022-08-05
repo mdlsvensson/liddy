@@ -9,5 +9,4 @@ export const user: Writable<User> = writable();
 
 export const tooltip: Writable<Tooltip> = writable({
   isVisible: false,
-  text: "",
 });
