@@ -1,53 +1,48 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
-	import { browser } from '$app/env';
-	import { state, modal, project, user } from '$lib/stores';
-	import { ModalType, ModalMode } from '$lib/common';
-	import { newUser, newProject } from '$lib/factories';
+	import { supabase } from '$lib/supabaseClient';
+	import { supabaseUser, user } from '$lib/stores';
+	import type { User as SupabaseUser, Session as SupabaseSession } from '@supabase/supabase-js';
+	import Login from '$lib/components/Login.svelte';
+	import Tooltip from '$lib/components/Tooltip.svelte';
 
-	import Logo from '$lib/Logo.svelte';
-	import Nav from '$lib/nav/Nav.svelte';
-	import Modal from '$lib/modal/Modal.svelte';
-	import ProjectSwitcher from '$lib/ProjectSwitcher.svelte';
-	import Login from '$lib/auth/Login.svelte';
+	const supabaseAuthUser = supabase.auth.user();
+	if (supabaseAuthUser) supabaseUser.set(supabaseAuthUser);
 
-	// Global keybinds
-	if (typeof window !== 'undefined') {
-		document.onkeydown = (event: KeyboardEvent) => {
-			if (event.key === 'Escape') {
-				if ($modal.isVisible) {
-					$modal.isVisible = false;
-				}
-			}
-		};
+	supabase.auth.onAuthStateChange((_, session: SupabaseSession | null) => {
+		if (!session) return;
+		supabaseUser.set(session.user as SupabaseUser);
+	});
+
+	if ($supabaseUser) {
+		console.log($supabaseUser);
 	}
 </script>
 
-<svelte:head>
-	<title>Liddy</title>
-</svelte:head>
+<Tooltip />
 
-<Modal />
-
-{#if $project != undefined}
-	<ProjectSwitcher project={$project.name} />
-{/if}
-
-<div class="flex w-screen h-screen">
-	{#if $user}
+{#if $user}
+	<div class="flex ipa-wrapper">
 		<header class="w-16 h-full bg-bg2 flex flex-col gap-6 items-center">
 			<Logo />
 			<Nav />
 		</header>
-	{/if}
-
-	<main class="w-full p-6">
-		{#if !$user}
-			<Login />
-		{:else}
+		<main class="w-full h-full p-6">
 			<slot />
-		{/if}
-	</main>
-</div>
+		</main>
+	</div>
+{:else if !$user}
+	<div class="ipa-wrapper">
+		<main class="w-full h-full p-6">
+			<Login />
+		</main>
+	</div>
+{/if}
+
+<style>
+	.ipa-wrapper {
+		@apply w-screen;
+		@apply h-screen;
+		@apply overflow-hidden;
+	}
+</style>

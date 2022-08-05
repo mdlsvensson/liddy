@@ -1,18 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
-const plugin = require('tailwindcss/plugin');
-
-const backfaceVisibility = plugin(function({addUtilities}) {
-  addUtilities({
-    '.backface-visible': {
-      'backface-visibility': 'visible',
-    },
-    '.backface-hidden': {
-      'backface-visibility': 'hidden',
-    }
-  })
-});
-
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
@@ -23,7 +9,8 @@ module.exports = {
         'bg3': '#353A45',
         'bg4': '#41454F',
         'bg5': '#4C5059',
-        'text': '#EAE8FF',
+        'text1': '#EAE8FF',
+        'text2': '#FDFDFF',
         'red': '#B10F2E',
         'green': '#26c485',
         'blue': '#0094C6',
@@ -32,5 +19,5 @@ module.exports = {
       },
     },
   },
-  plugins: [backfaceVisibility],
+  plugins: [],
 }

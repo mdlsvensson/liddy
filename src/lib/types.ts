@@ -24,17 +24,21 @@ export type Owner = {
   ownerId: string;
 };
 
+export type Visibility = {
+  isVisible: boolean;
+}
+
 export interface State {
   isNewUser: boolean;
   isLoading: boolean;
   isError: boolean;
   isLoggedIn: boolean;
-}
+};
 
 export interface Db {
   isConnected: boolean;
   isConnecting: boolean;
-}
+};
 
 export type User = {
   email: string;
@@ -72,9 +76,12 @@ export type Card = {
   columnId: string,
 } & Id & Descriptor & Dated & DueDate & Owner;
 
-export interface Modal {
-  isVisible: boolean;
+export type Modal = {
   type: number | null;
   mode: number | null;
-  data: Record<string, any>;
-}
+  data: Card | User | Project | Column | null;
+} & Visibility;
+
+export type Tooltip = {
+  text: string;
+} & Visibility;
