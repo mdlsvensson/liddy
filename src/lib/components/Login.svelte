@@ -4,6 +4,7 @@
 	import LoginError from './LoginError.svelte';
 	import LoginWithIcon from './LoginWithIcon.svelte';
 	import LoginFooter from './LoginFooter.svelte';
+	import LoginLinkButton from './LoginLinkButton.svelte';
 
 	let email: string;
 	let errorText = '';
@@ -40,14 +41,7 @@
 				bind:value={email}
 			/>
 
-			<div class="w-full h-14">
-				<input
-					type="submit"
-					value={loading ? 'Loading' : buttonText}
-					disabled={loading}
-					class="h-full bg-orange rounded-md w-full text-bg1 font-bold text-bg border-orange-dim border-b-4 hover:border-b-0 hover:translate-y-[4px] hover:h-[52px] transition-all cursor-pointer"
-				/>
-			</div>
+			<LoginLinkButton {loading} {buttonText} />
 		</div>
 
 		<div class="flex flex-col gap-2">
