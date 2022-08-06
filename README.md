@@ -69,12 +69,15 @@ _Note_: **Temp**.
 ### `Getting Started`
 
 app.css contains global rules for non-class/id selectors only.
+Fonts used are [Arvo][arvo], [Nunito][nunito], and [Work Sans][worksans].
 
 ### `Community`
 
 ## Why liddy?
 
 ## Changelog
+
+## Notes
 
 [docs]:https://github.com/mdlsvensson/liddy/wiki
 [releases]:https://github.com/mdlsvensson/liddy/releases
@@ -83,3 +86,6 @@ app.css contains global rules for non-class/id selectors only.
 [tailwind]:https://github.com/tailwindlabs/tailwindcss
 [postgres]:https://www.postgresql.org/
 [supabase]:https://github.com/supabase/supabase
+[nunito]:https://fonts.google.com/specimen/Nunito
+[arvo]:https://fonts.google.com/specimen/Arvo
+[worksans]:https://fonts.google.com/specimen/Work+Sans
