@@ -1,32 +1,36 @@
-export type Id = {
+import type { ApiError } from '@supabase/supabase-js';
+
+type Id = {
   id: string;
 };
 
-export type Title = {
+type Title = {
   title: string;
 };
 
-export type Descriptor = {
+type Descriptor = {
   name: string;
   description: string;
 };
 
-export type Dated = {
+type Dated = {
   createdAt: number | null;
   updatedAt: number | null;
 };
 
-export type DueDate = {
+type DueDate = {
   dueDate: number | null;
 };
 
-export type Owner = {
+type Owner = {
   ownerId: string;
 };
 
-export type Visibility = {
+type Visibility = {
   isVisible: boolean;
-}
+};
+
+/////////////////////////////////////
 
 export interface State {
   isNewUser: boolean;
@@ -48,6 +52,7 @@ export type User = {
   memberOf: Project[];
   lastLogin: number | null;
   lastLoginIp: number | null;
+  isUser: true;
 } & Id & Descriptor & Dated;
 
 export type Project = {
@@ -59,12 +64,14 @@ export type Project = {
   isDeleted: boolean;
   isPublic: boolean;
   isLocked: boolean;
+  isProject: true;
 } & Id & Descriptor & Dated & DueDate & Owner;
 
 export type Column = {
   color: string;
   cards: Card[];
   projectId: string;
+  isColumn: true;
 } & Id & Title;
 
 export type Card = {
@@ -74,14 +81,48 @@ export type Card = {
   comments: string[],
   attachments: string[],
   columnId: string,
+  isCard: true;
 } & Id & Descriptor & Dated & DueDate & Owner;
 
 export type Modal = {
   type: number | null;
   mode: number | null;
   data: Card | User | Project | Column | null;
+  isModal: true;
 } & Visibility;
 
 export type Tooltip = {
   text?: string;
+  isTooltip: true;
 } & Visibility;
+
+// Predicates ///////////////////////
+
+export const isUser = (data: any): data is User => {
+  return data.isUser;
+};
+
+export const isProject = (data: any): data is Project => {
+  return data.isProject;
+};
+
+export const isColumn = (data: any): data is Column => {
+  return data.isColumn;
+};
+
+export const isCard = (data: any): data is Card => {
+  return data.isCard;
+};
+
+export const isModal = (data: any): data is Modal => {
+  return data.isModal;
+};
+
+export const isTooltip = (data: any): data is Tooltip => {
+  return data.isTooltip;
+};
+
+export const isApiError = (data: any): data is ApiError => {
+  return 'message' in data;
+};
+
