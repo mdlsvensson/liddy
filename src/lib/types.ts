@@ -1,32 +1,32 @@
 import type { ApiError } from '@supabase/supabase-js';
 
-type Id = {
+export type Id = {
   id: string;
 };
 
-type Title = {
+export type Title = {
   title: string;
 };
 
-type Descriptor = {
+export type Descriptor = {
   name: string;
   description: string;
 };
 
-type Dated = {
-  createdAt: number | null;
-  updatedAt: number | null;
+export type Dated = {
+  createdAt: string;
+  updatedAt: string | undefined;
 };
 
-type DueDate = {
+export type DueDate = {
   dueDate: number | null;
 };
 
-type Owner = {
+export type Owner = {
   ownerId: string;
 };
 
-type Visibility = {
+export type Visibility = {
   isVisible: boolean;
 };
 
@@ -45,13 +45,14 @@ export interface Db {
 };
 
 export type User = {
-  email: string;
+  email: string | undefined;
+  phone: string | undefined;
   isNewUser: boolean;
-  isAdmin: boolean;
+  role: string | undefined;
   projects: Project[];
   memberOf: Project[];
-  lastLogin: number | null;
-  lastLoginIp: number | null;
+  lastLogInAt: string | undefined;
+  lastLogInIp: number | null;
   isUser: true;
 } & Id & Descriptor & Dated;
 
