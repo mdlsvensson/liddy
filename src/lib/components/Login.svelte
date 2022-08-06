@@ -54,8 +54,8 @@
 				<LoginWithIcon name="google" />
 				<LoginWithIcon name="apple" />
 				<LoginWithIcon name="linkedin" />
-				<LoginWithIcon name="github" />
 				<LoginWithIcon name="slack" />
+				<LoginWithIcon name="github" />
 				<LoginWithIcon name="discord" />
 			</div>
 		</div>
