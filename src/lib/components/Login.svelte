@@ -5,6 +5,7 @@
 	import LoginWithIcon from './LoginWithIcon.svelte';
 	import LoginFooter from './LoginFooter.svelte';
 	import LoginLinkButton from './LoginLinkButton.svelte';
+	import { isApiError } from '$lib/types';
 
 	let email: string;
 	let errorText = '';
@@ -20,9 +21,11 @@
 			const { error } = await supabase.auth.signIn({ email });
 			if (error) throw error;
 			if (!error) isLinkSent = true;
-		} catch (error: any) {
-			isError = true;
-			errorText = error.message || error.error_description;
+		} catch (error) {
+			if (isApiError(error)) {
+				isError = true;
+				errorText = error.message;
+			}
 		} finally {
 			loading = false;
 		}
