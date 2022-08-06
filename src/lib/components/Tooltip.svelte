@@ -8,8 +8,28 @@
 
 	const onMouseMove = (event: MouseEvent) => {
 		if (!tooltipEl) return;
-		tooltipEl.style.left = `${event.pageX + 15}px`;
-		tooltipEl.style.top = `${event.pageY + 15}px`;
+
+		const offset = 15;
+
+		const isOutsideView = isTooltipOutside(event, offset);
+
+		let offsetTop: number = isOutsideView ? -offset - height : offset;
+		let offsetLeft: number = isOutsideView ? -offset - width : offset;
+
+		tooltipEl.style.top = `${event.pageY + offsetTop}px`;
+		tooltipEl.style.left = `${event.pageX + offsetLeft}px`;
+	};
+
+	const isTooltipOutside = (event: MouseEvent, offset: number): boolean => {
+		const margin = 5;
+
+		const isOutsideView = {
+			bottom: event.pageY + (offset + margin) + height > window.innerHeight,
+			right: event.pageX + (offset + margin) + width > window.innerWidth,
+		};
+
+		if (isOutsideView.bottom || isOutsideView.right) return true;
+		return false;
 	};
 
 	if (browser) {
